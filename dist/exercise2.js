@@ -1,5 +1,8 @@
 "use strict";
 class Calculator {
+    //for all methods I had to use the type 'any' to handle the possibility of a user adding 
+    //any other type other than a number
+    // I also had to use the type string to handle the string error messages
     add(a, b) {
         if (this.validateInputs(a, b)) {
             return a + b;
@@ -31,14 +34,10 @@ class Calculator {
         return typeof a === 'number' && typeof b === 'number';
     }
 }
-// Example usage
 const calculator = new Calculator();
-console.log(calculator.add(2, 3)); // 5
-console.log(calculator.subtract(10, 5)); // 5
-console.log(calculator.multiply(4, 3)); // 12
-console.log(calculator.divide(10, 2)); // 5
-console.log(calculator.divide(10, 0)); // Division by zero is not allowed.
-console.log(calculator.add(2, "3")); // Invalid inputs. Both inputs must be numbers.
-console.log(calculator.subtract("10", 5)); // Invalid inputs. Both inputs must be numbers.
-console.log(calculator.multiply(4, "three")); // Invalid inputs. Both inputs must be numbers.
-console.log(calculator.divide("ten", 2)); // Invalid inputs. Both inputs must be numbers.
+console.log(calculator.add(17, 50));
+console.log(calculator.subtract(23, 7));
+console.log(calculator.multiply(5, 3));
+console.log(calculator.divide(15, 3));
+console.log(calculator.divide(5, 0));
+console.log(calculator.add(2, "3"));

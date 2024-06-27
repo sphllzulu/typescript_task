@@ -1,29 +1,29 @@
  enum TrafficLight {
-    Red,
-    Yellow,
-    Green
+    Red,//0 by default unless stated otherwise
+    Yellow,//1
+    Green//2
 }
 
-let currentLight: TrafficLight = TrafficLight.Red;
+let Light: TrafficLight = TrafficLight.Red;//first light will be red
 
 function changeLight() {
-    switch (currentLight) {
+    switch (Light) {
         case TrafficLight.Red:
-            currentLight = TrafficLight.Green;
+            Light = TrafficLight.Green;//if the robot light is red, it will be changed to green
             break;
         case TrafficLight.Green:
-            currentLight = TrafficLight.Yellow;
+            Light = TrafficLight.Yellow;//if its green it will be set to yellow
             break;
         case TrafficLight.Yellow:
-            currentLight = TrafficLight.Red;
+            Light = TrafficLight.Red;//if its yellow, it will be set to red
             break;
     }
-    console.log(`Changed light to: ${TrafficLight[currentLight]}`);
+    return console.log(`${TrafficLight[Light]}`);
 }
 
 function startTrafficLight() {
-    console.log(`Initial light: ${TrafficLight[currentLight]}`);
-    setInterval(changeLight, 10000); 
+    console.log(` ${TrafficLight[Light]}`);
+    setInterval(changeLight, 10000); //this will set up a timer that will call the changelight function every 10 secs
 }
 
 startTrafficLight();
